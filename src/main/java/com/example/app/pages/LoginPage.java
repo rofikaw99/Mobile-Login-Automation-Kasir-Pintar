@@ -9,27 +9,34 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends BasePageObject {
 
-  public void inputUsername(String username) {
-//    By locator = MobileBy.id("username");
-//    AndroidElement tfUsername = driver.findElement(locator);
-//    tfUsername.clear();
-//    tfUsername.sendKeys(username);
-    type(MobileBy.id("username"), username);
+  public void clickplusBtn() {
+    By locator = MobileBy.id("com.yoesuv.androidroom:id/fabMain");
+    AndroidElement btnPlus = driver.findElement(locator);
+    btnPlus.click();
+    click(MobileBy.id("com.yoesuv.androidroom:id/fabMain"));
   }
 
-  public void inputPassword(String password) {
-//    By locator = MobileBy.id("password");
-//    AndroidElement tfPassword = driver.findElement(locator);
-//    tfPassword.clear();
-//    tfPassword.sendKeys(password);
-    type(MobileBy.id("password"), password);
+  public void Inputemail(String email) {
+    By locator = MobileBy.id("org.owline.kasirpintar:id/edt_email");
+    AndroidElement emailElmnt = driver.findElement(locator);
+    emailElmnt.clear();
+    emailElmnt.sendKeys(email);
+    type(MobileBy.id("org.owline.kasirpintar:id/edt_email"), email);
   }
 
-  public void clickLoginBtn() {
-//    By locator = MobileBy.id("login");
-//    AndroidElement btnLogin = driver.findElement(locator);
-//    btnLogin.click();
-    click(MobileBy.id("login"));
+  public void userInputpassword(String password) {
+    By locator = MobileBy.id("org.owline.kasirpintar:id/edt_password");
+    AndroidElement PasswordElmnt = driver.findElement(locator);
+    PasswordElmnt.clear();
+    PasswordElmnt.sendKeys(password);
+    type(MobileBy.id("org.owline.kasirpintar:id/edt_password"), password);
+  }
+
+  public void clickloginBtn() {
+    By locator = MobileBy.id("org.owline.kasirpintar:id/btn_login");
+    AndroidElement btnlogin = driver.findElement(locator);
+    btnlogin.click();
+    click(MobileBy.id("org.owline.kasirpintar:id/btn_login"));
   }
 
 }

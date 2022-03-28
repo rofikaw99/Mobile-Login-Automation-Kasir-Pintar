@@ -1,19 +1,9 @@
-@login @android
-Feature: Login
+Feature: Login Kasir Pintar
 
-  @test @positive
-  Scenario: Verify user successfully login when input valid email and password
-    Given user is on login page
-    When user input username "admin"
-    When user input password "admin"
-    When user click button login
+  @login
+  Scenario: login kasir pintar
+    Given user on login page
+    When user input email "batiktrimulyo@gmail.com"
+    And user input password "Rofik1999"
+    And click login button
     Then user successfully login
-    When user go to list menu
-    And user do scroll
-
-  @negative
-  Scenario: Verify user failed to login when input invalid email and password
-    Given user is on login page
-    When user input username "invalid"
-    When user input password "invalid"
-    When user click button login

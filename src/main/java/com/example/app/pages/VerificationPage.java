@@ -9,15 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CalculatorPage extends BasePageObject {
-
-  public String getTitle() {
-//    By locator = MobileBy.xpath(
-//        "//android.view.ViewGroup[@resource-id='com.isl.simpleapp:id/toolbar']//android.widget.TextView");
-//    AndroidElement labelTitle = driver.findElement(locator);
-//    return labelTitle.getText();
-    return getText(MobileBy.xpath("//android.view.ViewGroup[@resource-id='com.isl.simpleapp:id/toolbar']//android.widget.TextView"));
-  }
+public class VerificationPage extends BasePageObject {
 
   public boolean checkHamburgerBtnAppear() {
 //    By locator = MobileBy.AccessibilityId("Open navigation drawer");
@@ -25,10 +17,10 @@ public class CalculatorPage extends BasePageObject {
 //    return hamburgerBtn.isDisplayed();
 
     //explicit wait
-    By locator = MobileBy.AccessibilityId("Open navigation drawer");
+    By locator = MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.ImageView");
     WebDriverWait wait = new WebDriverWait(driver, 10, 1000);
-    AndroidElement hamburgerBtn = (AndroidElement) wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-    return hamburgerBtn.isDisplayed();
+    AndroidElement itemContent = (AndroidElement) wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    return itemContent.isDisplayed();
   }
 
 }
